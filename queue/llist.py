@@ -12,18 +12,14 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-    def reverse(self):
-        return self._reverse(self.head)
-
-    def _reverse(self, node, prev=None):
-        if not node:
-            self.head = prev
-            return
-        else:
-            n = node.next
-            node.next = prev
-            print(n, node, node.next)
-            return self._reverse(n, node)
+    # def add_to_tail(self, value):
+    #     if self.head is None:
+    #         self.head = Node(value)
+    #     curr = self.head
+    #     while curr.next:
+    #         print(curr.next)
+    #         curr = curr.next
+    #     curr.next = Node(value)
 
     def add_to_tail(self, val):
         new_node = Node(val)
@@ -81,27 +77,3 @@ class LinkedList:
             lst.append(curr)
             curr = curr.next
         print([f'{x}====>' for x in lst])
-
-
-ll = LinkedList()
-ll.add_to_tail(101)
-print(ll.head, ll.tail)
-ll.add_to_tail(300)
-ll.add_to_tail(10020202)
-print(ll.head, ll.tail)
-ll.add_to_tail(-102)
-# ll.remove_head()
-ll.print_list()
-ll.add_to_tail(1001)
-ll.print_list()
-ll.get_max()
-print(ll.contains(300))
-print(ll.contains(201))
-print(ll.tail)
-ll.reverse()
-ll.print_list()
-
-
-def joke_problem(self, lst):
-    for l in lst:
-        print(l)
